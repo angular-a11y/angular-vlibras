@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         run: npm ci --legacy-peer-deps && npm run build
-      - name: Test unit
+      - name: Test unit library
         run: npm run test:lib
-      - name: Test unit
+      - name: Test unit application
         run: npm run test
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
