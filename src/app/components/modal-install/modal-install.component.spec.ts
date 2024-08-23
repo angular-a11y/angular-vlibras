@@ -46,7 +46,7 @@ describe('ModalinstallComponent', () => {
 
   it('should render modal content with expected headings and code examples', () => {
     const headings = fixture.debugElement.queryAll(By.css('.modal-content h2'));
-    const codeExamples = fixture.debugElement.queryAll(By.css('.modal-content code.code-wrapper'));
+    const codeExamples = fixture.debugElement.queryAll(By.css('.modal-content .code-wrapper'));
 
     expect(headings.length).toBe(5); // Check if all expected headings are rendered
     expect(codeExamples.length).toBe(5); // Check if all expected code examples are rendered
@@ -55,7 +55,7 @@ describe('ModalinstallComponent', () => {
   it('should render correct code example content', () => {
     component.codeExample = 'npm install angular-vlibras';
     fixture.detectChanges();
-    const codeExampleElement = fixture.debugElement.query(By.css('.modal-content code.code-wrapper'));
+    const codeExampleElement = fixture.debugElement.query(By.css('.modal-content .code-wrapper'));
     expect(codeExampleElement.nativeElement.textContent).toContain('npm install angular-vlibras');
   });
 });
