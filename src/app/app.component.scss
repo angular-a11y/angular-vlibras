@@ -76,7 +76,8 @@ main {
   width: 100%;
   max-width: 700px;
   h1 {
-    margin-top: 1.75rem;
+    font-size: 2.5rem;
+    margin-top: .5rem;
     text-align: right;
   }
   p {
@@ -155,11 +156,24 @@ main {
   }
 }
 
+.gear {
+  transform-origin: center;
+  animation: rotateClockwise 4s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 650px) {
   .content {
     flex-direction: column;
     width: max-content;
-    text-align: center;
     h1 { text-align: center; }
     .left-side {
       justify-content: center;
