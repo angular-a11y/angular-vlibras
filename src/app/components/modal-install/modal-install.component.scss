@@ -34,9 +34,16 @@
   }
 
   .code-wrapper,
-  .code-wrapper .hljs {
+  .code-wrapper .hljs,
+  p {
     background-color: #fff;
     color: #000;
+  }
+
+  p {
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-block;
   }
 }
 
