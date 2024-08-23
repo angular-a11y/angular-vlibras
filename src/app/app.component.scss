@@ -32,7 +32,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: calc(100vh -  2rem);
+  min-height: calc(100vh -  40px);
   position: relative;
   display: flex;
 }
@@ -66,7 +66,8 @@ main {
 }
 
 .angular-logo {
-  max-width: 9.2rem;
+  max-width: 12rem;
+  width: 100%;
 }
 
 .content {
@@ -74,14 +75,13 @@ main {
   justify-content: space-around;
   width: 100%;
   max-width: 700px;
-}
-
-.content h1 {
-  margin-top: 1.75rem;
-}
-
-.content p {
-  margin-top: 1.5rem;
+  h1 {
+    margin-top: 1.75rem;
+    text-align: right;
+  }
+  p {
+    margin-top: 1.5rem;
+  }
 }
 
 .divider {
@@ -116,15 +116,17 @@ main {
   line-height: 1.4rem;
   letter-spacing: -0.00875rem;
   text-decoration: none;
-}
-
-.pill:hover {
-  background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  &:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
 }
 
 .pill-group {
   display: flex;
   flex-direction: row;
+  svg {
+    margin-inline-start: 0.25rem;
+  }
 }
 
 .pill-group .pill:nth-child(6n + 1) {
@@ -134,10 +136,6 @@ main {
 .pill-group .pill:nth-child(6n + 4),
 .pill-group .pill:nth-child(6n + 5) {
   --pill-accent: var(--hot-red);
-}
-
-.pill-group svg {
-  margin-inline-start: 0.25rem;
 }
 
 .social-links {
@@ -156,6 +154,7 @@ main {
     flex-direction: column;
     width: max-content;
     text-align: center;
+    h1 { text-align: center; }
   }
 
   .pill-group {

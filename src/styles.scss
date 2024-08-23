@@ -1,6 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --primary: #dd0031;
+  --secondary: #8750c3;
+  --main-color: #2c3e50;
+}
+
 body {
   min-height: calc(100vh - 2rem);
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  &:before,
+  &:after {
+    content: "";
+    display: flex;
+    height: 20px;
+    background: var(--primary);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    box-shadow: 0 0 0 1px #fff, 0 0 20px rgba(0,0,0,.4);
+  }
+}
+
+.shimmer {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(90deg,
+  rgba(255, 255, 255, .8) 0%,
+  rgba(255, 255, 255, .8) 10%,
+  rgba(255, 255, 255, 0) 30%,
+  rgba(248, 197, 197, 0) 70%,
+  rgba(255, 255, 255, .8) 90%,
+  rgba(255, 255, 255, .8) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+  backdrop-filter: contrast(150%) brightness(80%)  saturate(2);
+  position: fixed;
+  z-index: 111;
+  opacity: .4;
+  pointer-events: none;
+  user-select: none;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }

@@ -1,3 +1,5 @@
+<div class="shimmer top"></div>
+<div class="shimmer bottom"></div>
 <angular-vlibras />
 
 <main class="main">
@@ -8,6 +10,7 @@
         viewBox="0 0 982 239"
         fill="none"
         class="angular-logo"
+        aria-label="Logo Angular"
       >
         <g clip-path="url(#a)">
           <path
@@ -49,14 +52,13 @@
         </defs>
       </svg>
       <h1>{{ title }}</h1>
-      <p>Congratulations! 🎉</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
         @for (item of [
-          { title: 'VLibras Docs', link: 'https://vlibras.gov.br/doc/widget/index.html' },
           { title: 'Angular a11y', link: 'https://github.com/angular-a11y' },
+          { title: 'VLibras Docs', link: 'https://vlibras.gov.br/doc/widget/index.html' },
           { title: 'Angular Dev', link: 'https://angular.dev' },
         ]; track item.title) {
           <a
