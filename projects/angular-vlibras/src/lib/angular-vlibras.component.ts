@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'angular-vlibras',
   standalone: true,
-  imports: [],
   templateUrl: 'angular-vlibras.component.html',
-  styles: ``
 })
+
 export class AngularVlibras {
   src: string = 'https://vlibras.gov.br/app/vlibras-plugin.js';
   urlWidget: string = 'https://vlibras.gov.br/app';
@@ -26,7 +25,6 @@ export class AngularVlibras {
 
   public createWidget(): void {
     this.script?.removeEventListener('load', () => this.createWidget());
-    // eslint-disable-next-line
     new (window as any).VLibras.Widget(this.urlWidget);
     this.observeDOMChanges();
   }
