@@ -1,13 +1,50 @@
-# angular-vlibras
+# Angular VLibras
 
-## Development server
+**Angular VLibras** is an Angular library that seamlessly integrates the VLibras accessibility widget into your Angular applications. VLibras provides automatic translation of digital content into Brazilian Sign Language (Libras), enhancing accessibility for users.
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Build
+Install the `angular-vlibras` library via npm:
 
-Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install angular-vlibras
+```
 
-## Running unit tests
+or with yarn:
 
-Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+yarn add angular-vlibras
+```
+
+## Usage
+
+After installation, follow the steps below to integrate the VLibras widget into your Angular application:
+
+### 1. Import the `AngularVlibras`:
+
+In your application's root module (typically `app.module.ts`), import the `AngularVlibras`:
+
+```typescript
+import { Component } from '@angular/core';
+import { AngularVlibras } from 'angular-vlibras';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [AngularVlibras],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+
+export class AppComponent { }
+```
+
+### 2. Use the `<angular-vlibras />` Component:
+
+Add the `<angular-vlibras />` component to your application template to activate the VLibras widget:
+
+```html
+<angular-vlibras />
+```
+
+This will automatically embed the VLibras widget into your application, making it accessible to users.
