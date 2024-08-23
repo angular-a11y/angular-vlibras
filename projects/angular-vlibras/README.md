@@ -1,24 +1,50 @@
-# AngularVlibras
+# Angular VLibras
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+**Angular VLibras** is an Angular library that seamlessly integrates the VLibras accessibility widget into your Angular applications. VLibras provides automatic translation of digital content into Brazilian Sign Language (Libras), enhancing accessibility for users.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project angular-vlibras` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-vlibras`.
-> Note: Don't forget to add `--project angular-vlibras` or else it will be added to the default project in your `angular.json` file. 
+Install the `angular-vlibras` library via npm:
 
-## Build
+```bash
+npm install angular-vlibras
+```
 
-Run `ng build angular-vlibras` to build the project. The build artifacts will be stored in the `dist/` directory.
+or with yarn:
 
-## Publishing
+```bash
+yarn add angular-vlibras
+```
 
-After building your library with `ng build angular-vlibras`, go to the dist folder `cd dist/angular-vlibras` and run `npm publish`.
+## Usage
 
-## Running unit tests
+After installation, follow the steps below to integrate the VLibras widget into your Angular application:
 
-Run `ng test angular-vlibras` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 1. Import the `AngularVlibras`:
 
-## Further help
+In your application's root module (typically `app.module.ts`), import the `AngularVlibras`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```typescript
+import { Component } from '@angular/core';
+import { AngularVlibras } from 'angular-vlibras';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [AngularVlibras],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+
+export class AppComponent { }
+```
+
+### 2. Use the `<angular-vlibras />` Component:
+
+Add the `<angular-vlibras />` component to your application template to activate the VLibras widget:
+
+```html
+<angular-vlibras />
+```
+
+This will automatically embed the VLibras widget into your application, making it accessible to users.
