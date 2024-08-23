@@ -82,6 +82,12 @@ main {
   p {
     margin-top: 1.5rem;
   }
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
 }
 
 .divider {
@@ -155,6 +161,10 @@ main {
     width: max-content;
     text-align: center;
     h1 { text-align: center; }
+    .left-side {
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .pill-group {
