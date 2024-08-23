@@ -17,14 +17,14 @@ export class AngularVlibras {
     this.init();
   }
 
-  private init(): void {
+  public init(): void {
     this.script = document.createElement('script');
     this.script.addEventListener('load', () => this.createWidget());
     this.script.src = this.src;
     document.body.appendChild(this.script);
   }
 
-  private createWidget(): void {
+  public createWidget(): void {
     this.script?.removeEventListener('load', () => this.createWidget());
     // eslint-disable-next-line
     new (window as any).VLibras.Widget(this.urlWidget);
