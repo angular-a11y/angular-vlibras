@@ -13,7 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci --legacy-peer-deps && npm run build
+      - name: Install
+        run: npm ci --legacy-peer-deps
+      - name: Test unit
+        run: npm run test:lib
+      - name: Test unit
+        run: npm run test
+      - name: Build
+        run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
