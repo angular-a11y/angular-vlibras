@@ -6,7 +6,6 @@
     "outDir": "../../out-tsc/lib",
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
     "inlineSources": true,
     "types": []
   },
