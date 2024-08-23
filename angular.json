@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-vlibras": {
+    "angular-vlibras-example": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-vlibras",
+            "outputPath": "dist/angular-vlibras-example",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-vlibras:build:production"
+              "buildTarget": "angular-vlibras-example:build:production"
             },
             "development": {
-              "buildTarget": "angular-vlibras:build:development"
+              "buildTarget": "angular-vlibras-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,6 +97,42 @@
           }
         }
       }
+    },
+    "angular-vlibras": {
+      "projectType": "library",
+      "root": "projects/angular-vlibras",
+      "sourceRoot": "projects/angular-vlibras/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-vlibras/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-vlibras/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-vlibras/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/angular-vlibras/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
