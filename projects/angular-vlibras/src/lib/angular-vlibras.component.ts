@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AvatarOption, mapPosition, WidgetPosition } from './utils';
 
 @Component({
   selector: 'angular-vlibras',
   standalone: true,
   templateUrl: 'angular-vlibras.component.html',
 })
-
 export class AngularVlibras {
   src: string = 'https://vlibras.gov.br/app/vlibras-plugin.js';
   urlWidget: string = 'https://vlibras.gov.br/app';
+
+  @Input() position?: WidgetPosition;
+  @Input() avatar?: AvatarOption = 'guga';
+  @Input() opacity?: number = 1;
 
   private script: HTMLScriptElement | null = null;
 
@@ -25,7 +29,12 @@ export class AngularVlibras {
 
   public createWidget(): void {
     this.script?.removeEventListener('load', () => this.createWidget());
-    new (window as any).VLibras.Widget(this.urlWidget);
+    new (window as any).VLibras.Widget({
+      position: mapPosition[this.position ?? 'right'],
+      rootPath: this.urlWidget,
+      avatar: this.avatar,
+      opacity: this.opacity
+    });
     this.observeDOMChanges();
   }
 
