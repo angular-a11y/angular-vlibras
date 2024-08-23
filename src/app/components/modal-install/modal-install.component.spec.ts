@@ -53,10 +53,10 @@ describe('ModalinstallComponent', () => {
   });
 
   it('should render correct code example content', () => {
-    component.codeExample = 'npm install angular-techs-logos';
+    component.codeExample = 'npm install angular-vlibras';
     fixture.detectChanges();
     const codeExampleElement = fixture.debugElement.query(By.css('.modal-content code.code-wrapper'));
-    expect(codeExampleElement.nativeElement.textContent).toContain('npm install angular-techs-logos');
+    expect(codeExampleElement.nativeElement.textContent).toContain('npm install angular-vlibras');
   });
 });
 

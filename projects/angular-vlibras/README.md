@@ -89,7 +89,7 @@ Aqui está um exemplo de como configurar o widget VLibras com propriedades perso
 
 ```html
 <angular-vlibras 
-  position="bottomRight" 
+  position="left" 
   avatar="hosana" 
   opacity="0.9" />
 ```
