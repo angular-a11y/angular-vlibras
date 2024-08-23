@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/angular-vlibras-example",
+    "public": "dist/angular-vlibras-example/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
