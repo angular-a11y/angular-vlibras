@@ -19,20 +19,20 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have the 'vlibras' title`, () => {
-    expect(component.title).toEqual('vlibras');
+  it(`should have the 'VLibras' title`, () => {
+    expect(component.title).toEqual('VLibras');
   });
 
   it('should render the title', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('vlibras');
+    expect(compiled.querySelector('h1')?.textContent).toContain('VLibras');
   });
 
-  it('should render the <angular-vlibras> component', () => {
+  it('should render the <angular-VLibras> component', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const vlibrasElement = compiled.querySelector('angular-vlibras');
+    const vlibrasElement = compiled.querySelector('angular-VLibras');
     expect(vlibrasElement).toBeTruthy();
   });
 

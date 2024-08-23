@@ -11,5 +11,5 @@ import { AngularTechsLogosModule } from 'angular-techs-logos';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'vlibras';
+  title = 'VLibras';
 }
