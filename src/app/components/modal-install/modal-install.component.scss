@@ -35,17 +35,19 @@
 
   .code-wrapper,
   .code-wrapper .hljs,
-  p {
+  .type {
     background-color: #fff;
     color: #000;
   }
 
   h3 { margin-bottom: 0; }
 
-  p {
+  .type {
     border-radius: 10px;
-    padding: 1rem;
+    padding: .5rem;
     display: inline-block;
+    margin-right: .5rem;
+    margin-top: .5rem;
   }
 }
 
