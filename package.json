@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^18.1.0",
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
-    "angular-techs-logos": "^0.1.17",
+    "angular-techs-logos": "^0.1.22",
     "angular-vlibras": "^0.2.1",
     "highlight.js": "^11.10.0",
     "rxjs": "~7.8.0",
