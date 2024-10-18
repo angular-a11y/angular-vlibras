@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private renderer: Renderer2) {}
 
   title = 'VLibras';
-  codeString: string = '<angular-vlibras />';
+  codeString: string = 'npm install angular-vlibras';
   isModalActive: boolean = false;
 
   openModal(): void {
