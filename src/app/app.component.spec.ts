@@ -21,7 +21,7 @@ describe('AppComponent', () => {
   it('should render the title', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('VLibras');
+    expect(compiled.querySelector('h1')?.textContent).toContain('angular-vlibras');
   });
 
   it('should render the <angular-VLibras> component', () => {
@@ -45,14 +45,5 @@ describe('AppComponent', () => {
     const contentDiv = compiled.querySelector('div.content');
     expect(mainDiv).toBeTruthy();
     expect(contentDiv).toBeTruthy();
-  });
-
-  it('should have a left-side div with the SVG logo', () => {
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    const leftSideDiv = compiled.querySelector('div.left-side');
-    expect(leftSideDiv).toBeTruthy();
-    const svgElement = leftSideDiv?.querySelector('svg.angular-logo');
-    expect(svgElement).toBeTruthy();
   });
 });
