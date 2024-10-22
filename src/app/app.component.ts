@@ -1,30 +1,50 @@
-import { Component, Renderer2 } from '@angular/core';
-import { AngularVlibras } from 'angular-vlibras';
-import { AngularTechsLogosModule } from 'angular-techs-logos';
-// import { AngularVlibras } from '../../projects/angular-vlibras/src/lib/angular-vlibras.component';
-import { ModalinstallComponent } from './components/modal-install/modal-install.component';
+import { Component } from '@angular/core';
+import { NucleusAngularApp } from 'nucleus-angular';
 
+import pkg from '../../package.json';
+import pkgNPM from '../../projects/angular-vlibras/package.json';
+import { ExampleVlibras } from './example/example.component';
+import { ExampleComponent } from './app.example';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AngularVlibras, ModalinstallComponent, AngularTechsLogosModule],
+  imports: [NucleusAngularApp, ExampleVlibras],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(private renderer: Renderer2) {}
+  public appVersion;
+  public angularVersion;
+  public configNucleus: {
+    name: string;
+    github: string;
+    npm: string;
+    appVersion: string;
+    angularVersion: string;
+    stepsInstall: Array<{ name: string; language: string; content: string }>;
+  };
 
-  title = 'VLibras';
-  codeString: string = 'npm install angular-vlibras';
-  isModalActive: boolean = false;
-
-  openModal(): void {
-    this.isModalActive = true;
-    this.renderer.addClass(document.body, 'modal-active');
-  }
-
-  closeModal(): void {
-    this.isModalActive = false;
-    this.renderer.removeClass(document.body, 'modal-active');
+  constructor() {
+    this.appVersion = pkgNPM.version;
+    this.angularVersion = pkg.dependencies?.['@angular/core'].replace('^', '');
+    this.configNucleus = {
+      name: 'angular-vlibras',
+      github: 'https://github.com/angular-a11y/angular-vlibras',
+      npm: 'https://www.npmjs.com/package/angular-vlibras',
+      appVersion: this.appVersion,
+      angularVersion: this.angularVersion,
+      stepsInstall: [
+        {
+          name: 'Install',
+          language: 'bash',
+          content: 'npm install angular-vlibras',
+        },
+        {
+          name: 'Usage',
+          language: 'tsx',
+          content: ExampleComponent,
+        },
+      ],
+    };
   }
 }

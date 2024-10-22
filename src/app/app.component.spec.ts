@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { AngularVlibras } from 'angular-vlibras';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -8,7 +7,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, AngularVlibras],
+      imports: [AppComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -17,10 +16,6 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
-  });
-
-  it(`should have the 'VLibras' title`, () => {
-    expect(component.title).toEqual('VLibras');
   });
 
   it('should render the title', () => {
