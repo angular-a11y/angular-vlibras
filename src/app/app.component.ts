@@ -6,11 +6,10 @@ import pkgNPM from '../../projects/angular-vlibras/package.json';
 import { ExampleVlibras } from './example/example.component';
 import { ExampleComponent } from './app.example';
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [NucleusAngularApp, ExampleVlibras],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [NucleusAngularApp, ExampleVlibras],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   public appVersion;
