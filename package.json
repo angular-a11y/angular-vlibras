@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build angular-vlibras",
+    "build:lib": "ng build angular-vlibras && npm run postbuild",
+    "postbuild": "node scripts/post-build.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:lib": "ng test angular-vlibras",
+    "version": "cd projects/angular-vlibras && npm version patch",
     "publish": "cd dist/angular-vlibras && npm publish"
   },
   "private": true,
@@ -39,6 +41,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.1.0",
+    "jsonminify": "^0.4.2",
+    "terser": "^5.36.0",
     "typescript": "^5.9.3"
   }
 }
